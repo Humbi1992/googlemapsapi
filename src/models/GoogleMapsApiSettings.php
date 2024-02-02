@@ -5,12 +5,12 @@
  *
  * GoogleMapsApi model settings
  *
- * @link      https://www.bolden.nl
- * @copyright Copyright (c) 2018 Bolden B.V.
- * @author Klearchos Douvantzis
+ * @link      https://www.webtie.ch
+ * @copyright Copyright (c) 2024 Humbi1992.
+ * @author Sven Humbel
  */
 
-namespace bolden\googlemapsapi\models;
+namespace humbi1992\googlemapsapi\models;
 
 class GoogleMapsApiSettings extends \craft\base\Model
 {

@@ -5,16 +5,16 @@
  *
  * GoogleMapsApi Plugin
  *
- * @link      https://www.bolden.nl
- * @copyright Copyright (c) 2018 Bolden B.V.
- * @author Klearchos Douvantzis
+ * @link      https://www.webtie.ch
+ * @copyright Copyright (c) 2024 Sven Humbel
+ * @author Sven Humbel
  */
 
-namespace bolden\googlemapsapi\controllers;
+namespace humbi1992\googlemapsapi\controllers;
 
 use Craft;
 use craft\web\Controller;
-use bolden\googlemapsapi\GoogleMapsApi;
+use humbi1992\googlemapsapi\GoogleMapsApi;
 
 /**
  * GoogleMapsApi Controller

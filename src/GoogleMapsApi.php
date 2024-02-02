@@ -5,12 +5,12 @@
  *
  * GoogleMapsApi Plugin
  *
- * @link      https://www.bolden.nl
- * @copyright Copyright (c) 2018 Bolden B.V.
- * @author Klearchos Douvantzis
+ * @link      https://www.webtie.ch
+ * @copyright Copyright (c) 2024 Sven Humbel
+ * @author Sven Humbel
  */
 
-namespace bolden\googlemapsapi;
+namespace humbi1992\googlemapsapi;
 
 
 use Craft;
@@ -32,8 +32,8 @@ use craft\elements\Asset;
 use craft\elements\User;
 use craft\elements\GlobalSet;
 use craft\web\twig\variables\CraftVariable;
-use bolden\googlemapsapi\models\GoogleMapsApiSettings;
-use bolden\googlemapsapi\services\GoogleMapsApiService;
+use humbi1992\googlemapsapi\models\GoogleMapsApiSettings;
+use humbi1992\googlemapsapi\services\GoogleMapsApiService;
 
 /**
  * Craft plugins are very much like little applications in and of themselves. We’ve made
@@ -45,7 +45,7 @@ use bolden\googlemapsapi\services\GoogleMapsApiService;
  *
  * https://craftcms.com/docs/plugins/introduction
  *
- * @author    Bolden B.V.
+ * @author    Sven Humbel
  * @package   Weather
  * @since     0.0.1
  *

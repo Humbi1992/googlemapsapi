@@ -1,8 +1,8 @@
 {
-    "name": "bolden/google-maps-api",
-    "description": "Bolden's free plugin for Google Maps server-side web services on Craft CMS 3",
+    "name": "numbi1992/google-maps-api",
+    "description": "Humbi1992 Google Maps Plugin for Craft 4",
     "type": "craft-plugin",
-    "version": "1.0.3",
+    "version": "2.0.0",
     "keywords": [
         "craft",
         "cms",
@@ -17,15 +17,15 @@
     },
     "license": "MIT",
     "authors": [{
-        "name": "Bolden B.V.",
-        "homepage": "https://www.bolden.nl"
+        "name": "Sven Humbel",
+        "homepage": "https://www.webtie.ch"
     }],
     "require": {
-        "craftcms/cms": "^3.0.0"
+        "craftcms/cms": "^4.0.0"
     },
     "autoload": {
         "psr-4": {
-            "bolden\\googlemapsapi\\": "src/"
+            "humbi1992\\googlemapsapi\\": "src/"
         }
     },
     "extra": {
@@ -34,6 +34,6 @@
         "schemaVersion": "1.0.0",
         "hasCpSettings": true,
         "hasCpSection": false,
-        "class": "bolden\\googlemapsapi\\GoogleMapsApi"
+        "class": "humbi1992\\googlemapsapi\\GoogleMapsApi"
     }
 }
