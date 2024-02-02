@@ -2,7 +2,7 @@
     "name": "humbi1992/google-maps-api",
     "description": "Humbi1992 Google Maps Plugin for Craft 4",
     "type": "craft-plugin",
-    "version": "2.0.1",
+    "version": "2.0.2",
     "keywords": [
         "craft",
         "cms",

@@ -123,16 +123,16 @@ class GoogleMapsApi extends Plugin
         if ($this->isInstalled) {
             // setup url endpoints
             Event::on(UrlManager::class, UrlManager::EVENT_REGISTER_SITE_URL_RULES, function (RegisterUrlRulesEvent $event) {
-                $event->rules['api/googleMaps/geocode/<city:.*?>'] = 'google-maps-api/default/geocode';
-                $event->rules['api/googleMaps/city/<city:.*?>'] = 'google-maps-api/default/city';
-                $event->rules['api/googleMaps/timezone/<lat:[+-]?([0-9]*[.])?[0-9]+>,<lon:[+-]?([0-9]*[.])?[0-9]+>,<timestamp:\d+>'] = 'google-maps-api/default/timezone';
-                $event->rules['api/googleMaps/place/autocomplete/<input:.*?>'] = 'google-maps-api/default/place-autocomplete';
-                $event->rules['api/googleMaps/place/text/<input:.*?>/<fields:.*?>'] = 'google-maps-api/default/place-from-text';
-                $event->rules['api/googleMaps/place/details/<placeId:.*?>'] = 'google-maps-api/default/place-details';
-                $event->rules['api/googleMaps/elevation/<lat:[+-]?([0-9]*[.])?[0-9]+>,<lon:[+-]?([0-9]*[.])?[0-9]+>'] = 'google-maps-api/default/elevation';
-                $event->rules['api/googleMaps/distance/<originLat:[+-]?([0-9]*[.])?[0-9]+>,<originLon:[+-]?([0-9]*[.])?[0-9]+>,<destinationLat:[+-]?([0-9]*[.])?[0-9]+>,<destinationLon:[+-]?([0-9]*[.])?[0-9]+>,?<mode:(driving|bicycling|walking|transit)?>'] = 'google-maps-api/default/distance';
-                $event->rules['api/googleMaps/distancematrix/<origin:.*?>,<destination:.*?>,?<mode:(driving|bicycling|walking|transit)?>'] = 'google-maps-api/default/distancematrix';
-                $event->rules['api/googleMaps/range/<origin:.*?>,<destination:.*?>,<radius:.*?>,?<mode:(driving|bicycling|walking|transit)?>'] = 'google-maps-api/default/range';
+                $event->rules['actions/googleMaps/geocode/<city:.*?>'] = 'google-maps-api/default/geocode';
+                $event->rules['actions/googleMaps/city/<city:.*?>'] = 'google-maps-api/default/city';
+                $event->rules['actions/googleMaps/timezone/<lat:[+-]?([0-9]*[.])?[0-9]+>,<lon:[+-]?([0-9]*[.])?[0-9]+>,<timestamp:\d+>'] = 'google-maps-api/default/timezone';
+                $event->rules['actions/googleMaps/place/autocomplete/<input:.*?>'] = 'google-maps-api/default/place-autocomplete';
+                $event->rules['actions/googleMaps/place/text/<input:.*?>/<fields:.*?>'] = 'google-maps-api/default/place-from-text';
+                $event->rules['actions/googleMaps/place/details/<placeId:.*?>'] = 'google-maps-api/default/place-details';
+                $event->rules['actions/googleMaps/elevation/<lat:[+-]?([0-9]*[.])?[0-9]+>,<lon:[+-]?([0-9]*[.])?[0-9]+>'] = 'google-maps-api/default/elevation';
+                $event->rules['actions/googleMaps/distance/<originLat:[+-]?([0-9]*[.])?[0-9]+>,<originLon:[+-]?([0-9]*[.])?[0-9]+>,<destinationLat:[+-]?([0-9]*[.])?[0-9]+>,<destinationLon:[+-]?([0-9]*[.])?[0-9]+>,?<mode:(driving|bicycling|walking|transit)?>'] = 'google-maps-api/default/distance';
+                $event->rules['actions/googleMaps/distancematrix/<origin:.*?>,<destination:.*?>,?<mode:(driving|bicycling|walking|transit)?>'] = 'google-maps-api/default/distancematrix';
+                $event->rules['actions/googleMaps/range/<origin:.*?>,<destination:.*?>,<radius:.*?>,?<mode:(driving|bicycling|walking|transit)?>'] = 'google-maps-api/default/range';
             });
         }
     }
