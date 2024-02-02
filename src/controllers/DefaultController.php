@@ -28,7 +28,7 @@ class DefaultController extends Controller
     /**
      * @var array
      */
-    protected $allowAnonymous = true;
+    protected array|int|bool $allowAnonymous = true;
 
     // Public Methods
     // =========================================================================
@@ -36,13 +36,29 @@ class DefaultController extends Controller
     /**
      * Makes a request to geocode given latitude longitude and timestamp
      *
-     * @param float $lat
-     * @param float $lon
+     * @param string $city
      * @return void
      */
-    public function actionGeocode($lat, $lon)
+    public function actionGeocode($city): void
     {
-        $result = GoogleMapsApi::getInstance()->googleMapsApiService->geocode($lat, $lon);
+        $result = GoogleMapsApi::getInstance()->googleMapsApiService->geocode($city);
+        if ($result['status']) {
+            $this->asJson($result['data']);
+        } else {
+            $this->asErrorJson($result['error']);
+        }
+    }
+
+
+    /**
+     * Makes a request to geocode given latitude longitude and timestamp
+     *
+     * @param string $zip
+     * @return void
+     */
+    public function actionCity($city): void
+    {
+        $result = GoogleMapsApi::getInstance()->googleMapsApiService->city($city);
         if ($result['status']) {
             $this->asJson($result['data']);
         } else {
@@ -59,9 +75,44 @@ class DefaultController extends Controller
      * @param float $destinationLon
      * @return void
      */
-    public function actionDistance($originLat, $originLon, $destinationLat, $destinationLon, $mode)
+    public function actionDistance($originLat, $originLon, $destinationLat, $destinationLon, $mode): void
     {
         $result = GoogleMapsApi::getInstance()->googleMapsApiService->distance($originLat, $originLon, $destinationLat, $destinationLon, $mode);
+        if ($result['status']) {
+            $this->asJson($result['data']);
+        } else {
+            $this->asErrorJson($result['error']);
+        }
+    }
+
+    /**
+     * Makes a request to distance given latitude longitude from origin and destination
+     *
+     * @param float $origin
+     * @param float $destination
+     * @return void
+     */
+    public function actionDistancematrix($origin, $destination, $mode): void
+    {
+        $result = GoogleMapsApi::getInstance()->googleMapsApiService->distanceMatrix($origin, $destination, $mode);
+        if ($result['status']) {
+            $this->asJson($result['data']);
+        } else {
+            $this->asErrorJson($result['error']);
+        }
+    }
+
+    /**
+     * Makes a request to distance given latitude longitude from origin and destination
+     *
+     * @param float $originLat
+     * @param float $originLon
+     * @param string $radius
+     * @return void
+     */
+    public function actionRange($origin, $destination, $radius, $mode): void
+    {
+        $result = GoogleMapsApi::getInstance()->googleMapsApiService->range($origin, $destination, $radius, $mode);
         if ($result['status']) {
             $this->asJson($result['data']);
         } else {

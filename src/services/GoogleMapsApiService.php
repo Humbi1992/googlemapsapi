@@ -87,9 +87,58 @@ class GoogleMapsApiService extends Component
         }
     }
 
-    public function geocode($lat, $lon)
+    public function distanceMatrix($origin, $destination, $mode)
     {
-        $result = $this->request('geocode', 'latlng=' . $lat . ',' . $lon . '&key=' . $this->settings->googleMapsApiKey);
+        $result = $this->request('distancematrix', 'origins=' . $origin . ',Schweiz' . '&destinations=' . $destination . ',Schweiz' . '&mode=' . $mode . '&key=' . $this->settings->googleMapsApiKey);
+        if ($result['status']) {
+            return [
+                'status' => true,
+                'data' => $result['data']['rows']
+            ];
+        } else {
+            return [
+                'status' => false,
+                'error' => $result['error']
+            ];
+        }
+    }
+
+    public function range($origin, $destination, $radius, $mode)
+    {
+        $result = $this->request('distancematrix', 'origins=' . $origin . ',Schweiz' . '&destinations=' . $destination . ',Schweiz' . '&mode=' . $mode . '&key=' . $this->settings->googleMapsApiKey);
+        if ($result['status']) {
+            $isInRange = $result['data']['rows'][0]['elements'][0]['distance']['value']/1000 < $radius;
+            return [
+                'status' => true,
+                'data' => $isInRange
+            ];
+        } else {
+            return [
+                'status' => false,
+                'error' => $result['error']
+            ];
+        }
+    }
+
+    public function geocode($city)
+    {
+        $result = $this->request('geocode', 'address=' . $city . '&key=' . $this->settings->googleMapsApiKey);
+        if ($result['status']) {
+            return [
+                'status' => true,
+                'data' => $result['data']['results']
+            ];
+        } else {
+            return [
+                'status' => false,
+                'error' => $result['error']
+            ];
+        }
+    }
+
+    public function city($city)
+    {
+        $result = $this->request('geocode', 'address=' . $city . ',Schweiz' . '&key=' . $this->settings->googleMapsApiKey);
         if ($result['status']) {
             return [
                 'status' => true,

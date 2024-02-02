@@ -14,9 +14,9 @@ namespace humbi1992\googlemapsapi\models;
 
 class GoogleMapsApiSettings extends \craft\base\Model
 {
-    public $googleMapsApiKey = '';
+    public string $googleMapsApiKey = '';
 
-    public function rules()
+    public function rules(): array
     {
         return [
             [['googleMapsApiKey'], 'required']
